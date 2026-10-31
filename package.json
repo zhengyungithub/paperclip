@@ -17,6 +17,7 @@
   "build": {
     "appId": "com.paperclip.app",
     "productName": "Paperclip",
+    "compression": "normal",
     "files": [
       "main.js",
       "preload.js",
@@ -25,6 +26,9 @@
     "win": {
       "target": "portable",
       "artifactName": "Paperclip-${version}-portable.${ext}"
+    },
+    "nsis": {
+      "differentialPackage": false
     }
   }
 }
