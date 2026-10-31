@@ -1,0 +1,30 @@
+{
+  "name": "paperclip",
+  "productName": "Paperclip",
+  "version": "1.0.0",
+  "description": "一张住在电脑右边的剪贴板便签",
+  "main": "main.js",
+  "author": "Paperclip",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.paperclip.app",
+    "productName": "Paperclip",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": "portable",
+      "artifactName": "Paperclip-${version}-portable.${ext}"
+    }
+  }
+}

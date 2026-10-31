@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' file: data:; style-src 'self'; script-src 'self'" />
+  <title>Paperclip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="size-m">
+  <div class="shell">
+    <aside class="rail" id="rail" title="Paperclip">
+      <div class="rail-brand">PAPERCLIP</div>
+      <div class="rail-badge" id="railCount">0</div>
+    </aside>
+
+    <main class="panel">
+      <header class="head" id="head">
+        <div class="head-top">
+          <span class="wordmark">PAPERCLIP</span>
+          <span class="count" id="count">0 条</span>
+        </div>
+        <div class="head-row">
+          <nav class="tabs" id="tabs">
+            <button class="tab is-on" data-filter="all">全部</button>
+            <button class="tab" data-filter="text">文字</button>
+            <button class="tab" data-filter="image">图片</button>
+          </nav>
+          <div class="head-actions">
+            <button class="mini" id="selectToggle">选择</button>
+            <button class="mini hidden" id="selectAll">全选</button>
+            <button class="mini hidden" id="selectDone">完成</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="list" id="list" aria-live="polite"></section>
+
+      <div class="selectbar hidden" id="selectbar">
+        <span class="sel-label">已选 <b id="selCount">0</b> 条</span>
+        <div class="sel-actions">
+          <button class="primary" id="mergeBtn" disabled>合并复制</button>
+          <button class="ghost" id="cancelSelect">取消</button>
+        </div>
+      </div>
+
+      <footer class="foot">
+        <div class="foot-row">
+          <span class="foot-label">字号</span>
+          <div class="seg" id="sizes">
+            <button data-size="s">小</button>
+            <button data-size="m" class="on">中</button>
+            <button data-size="l">大</button>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="autoLaunch" />
+            <span class="track"><span class="knob"></span></span>
+            <span class="switch-label">开机启动</span>
+          </label>
+        </div>
+        <div class="foot-row foot-links">
+          <button class="link danger" id="clearAll">清空全部</button>
+          <span class="sep">·</span>
+          <button class="link" id="clearUnpinned">清除未置顶</button>
+          <span class="sep">·</span>
+          <button class="link" id="minimize">最小化</button>
+          <span class="sep">·</span>
+          <button class="link" id="quit">退出</button>
+        </div>
+        <div class="foot-note">
+          <kbd>Alt</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>V</kbd>
+          <span class="foot-note-text">随时唤起</span>
+        </div>
+      </footer>
+
+      <div class="toast" id="toast"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
